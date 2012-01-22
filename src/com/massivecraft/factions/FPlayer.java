@@ -66,7 +66,13 @@ public class FPlayer extends PlayerEntity implements EconomyParticipator
 	
 	// FIELD: power
 	private double power;
-	
+	private double powerMax;
+	public double getPowerMax() { return powerMax; }
+	public void setPowerMax(double powerMax) { this.powerMax = powerMax; }
+	private double powerMin;
+	public double getPowerMin() { return powerMin; }
+	public void setPowerMin(double powerMin) { this.powerMin = powerMin; }
+
 	// FIELD: lastPowerUpdateTime
 	private long lastPowerUpdateTime;
 	
@@ -119,6 +125,8 @@ public class FPlayer extends PlayerEntity implements EconomyParticipator
 	{
 		this.resetFactionData(false);
 		this.power = Conf.powerPlayerStarting;
+		this.powerMax = Conf.powerPlayerMax;
+		this.powerMin = Conf.powerPlayerMin;
 		this.lastPowerUpdateTime = System.currentTimeMillis();
 		this.lastLoginTime = System.currentTimeMillis();
 		this.mapAutoUpdating = false;
@@ -344,16 +352,6 @@ public class FPlayer extends PlayerEntity implements EconomyParticipator
 			this.power = this.getPowerMin();
 		}
 		//Log.debug("Power of "+this.getName()+" is now: "+this.power);
-	}
-	
-	public double getPowerMax()
-	{
-		return Conf.powerPlayerMax;
-	}
-	
-	public double getPowerMin()
-	{
-		return Conf.powerPlayerMin;
 	}
 	
 	public int getPowerRounded()
@@ -679,4 +677,5 @@ public class FPlayer extends PlayerEntity implements EconomyParticipator
 	{
 		this.sendMessage(P.p.txt.parse(str, args));
 	}
+
 }

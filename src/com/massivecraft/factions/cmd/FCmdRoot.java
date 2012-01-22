@@ -40,6 +40,8 @@ public class FCmdRoot extends FCommand
 	public CmdSaveAll cmdSaveAll = new CmdSaveAll();
 	public CmdSeeChunk cmdSeeChunks = new CmdSeeChunk();
 	public CmdSethome cmdSethome = new CmdSethome();
+	public CmdSetPowerMax cmdSetPowerMax = new CmdSetPowerMax();
+	public CmdSetPowerMin cmdSetPowerMin = new CmdSetPowerMin();
 	public CmdShow cmdShow = new CmdShow();
 	public CmdTag cmdTag = new CmdTag();
 	public CmdTitle cmdTitle = new CmdTitle();
@@ -103,6 +105,8 @@ public class FCmdRoot extends FCommand
 		this.addSubCommand(this.cmdSaveAll);
 		this.addSubCommand(this.cmdSeeChunks);
 		this.addSubCommand(this.cmdSethome);
+		this.addSubCommand(this.cmdSetPowerMax);
+		this.addSubCommand(this.cmdSetPowerMin);
 		this.addSubCommand(this.cmdShow);
 		this.addSubCommand(this.cmdTag);
 		this.addSubCommand(this.cmdTitle);
